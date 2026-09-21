@@ -4,198 +4,512 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Anusha | Biological Sciences Researcher</title>
+    <title>Anusha | Biological Sciences & Biotechnology</title>
+
+    <meta name="description"
+          content="Anusha's academic and research portfolio in biological sciences, biotechnology and medicinal biotechnology.">
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
+
+        * {
             margin: 0;
-            background: #f7faf8;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7f5;
             color: #17211b;
             line-height: 1.6;
         }
 
+        /* NAVIGATION */
+
         nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid #e5e9e5;
+            padding: 20px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
-            background: white;
-            position: sticky;
-            top: 0;
         }
 
-        nav h2 {
-            margin: 0;
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 2px;
         }
 
-        nav a {
-            margin-left: 20px;
-            text-decoration: none;
+        .nav-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav-links a {
             color: #17211b;
+            text-decoration: none;
+            font-size: 15px;
         }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+        /* GENERAL */
 
         section {
-            padding: 90px 8%;
+            padding: 110px 7%;
         }
 
+        .section-label {
+            color: #567565;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            line-height: 1.15;
+            margin-bottom: 45px;
+        }
+
+        /* HERO */
+
         .hero {
-            min-height: 80vh;
+            min-height: 88vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            align-items: center;
+            background: #f5f7f5;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-small {
+            font-size: 15px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: 60px;
-            margin-bottom: 10px;
+            font-size: clamp(55px, 10vw, 110px);
+            line-height: 0.95;
+            letter-spacing: -4px;
+            margin-bottom: 25px;
         }
 
         .hero h2 {
-            font-size: 30px;
-            font-weight: normal;
+            font-size: clamp(27px, 4vw, 48px);
+            font-weight: 400;
+            line-height: 1.15;
+            max-width: 850px;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 18px;
+            color: #536059;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .button {
             display: inline-block;
-            margin-top: 20px;
-            padding: 12px 22px;
-            background: #17211b;
-            color: white;
+            padding: 14px 25px;
+            border-radius: 50px;
             text-decoration: none;
-            border-radius: 8px;
-            width: fit-content;
+            font-weight: 600;
+            transition: 0.25s;
         }
 
-        .cards {
+        .button-dark {
+            background: #17211b;
+            color: white;
+        }
+
+        .button-light {
+            border: 1px solid #17211b;
+            color: #17211b;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .profile-placeholder {
+            min-height: 420px;
+            background: #e8eee9;
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #64736a;
+            font-size: 15px;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            color: #536059;
+            margin-bottom: 20px;
+        }
+
+        /* STATS */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .stat {
+            border-top: 1px solid #ccd5ce;
+            padding-top: 15px;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 28px;
+        }
+
+        .stat span {
+            color: #66736c;
+            font-size: 13px;
+        }
+
+        /* RESEARCH */
+
+        .research {
+            background: #f5f7f5;
+        }
+
+        .research-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
         }
 
-        .card {
+        .research-card {
             background: white;
-            padding: 30px;
-            border-radius: 15px;
+            padding: 38px;
+            border-radius: 22px;
+            border: 1px solid #e5eae6;
+            transition: 0.3s;
         }
 
-        footer {
-            padding: 30px 8%;
+        .research-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .research-number {
+            color: #71877a;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .research-card h3 {
+            font-size: 25px;
+            margin: 18px 0 10px;
+        }
+
+        .research-card p {
+            color: #66736c;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            background: white;
+        }
+
+        .project {
+            background: #17211b;
+            color: white;
+            padding: 55px;
+            border-radius: 28px;
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .project-label {
+            color: #b7c8bd;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .project h3 {
+            font-size: 42px;
+            margin: 15px 0;
+        }
+
+        .project p {
+            color: #cbd5cf;
+            font-size: 17px;
+            max-width: 650px;
+        }
+
+        .project-side {
+            border: 1px solid #536158;
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .project-side p {
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        /* EXPERIENCE */
+
+        .experience {
+            background: #f5f7f5;
+        }
+
+        .experience-item {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 35px;
+            padding: 30px 0;
+            border-top: 1px solid #d6ddd8;
+        }
+
+        .experience-year {
+            color: #71877a;
+            font-weight: 600;
+        }
+
+        .experience-item h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .experience-item p {
+            color: #66736c;
+        }
+
+        /* PUBLICATIONS */
+
+        .publications {
+            background: white;
+        }
+
+        .publication {
+            padding: 30px 0;
+            border-top: 1px solid #d6ddd8;
+        }
+
+        .publication h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .publication p {
+            color: #66736c;
+        }
+
+        /* CONTACT */
+
+        .contact {
             background: #17211b;
             color: white;
             text-align: center;
         }
 
-        @media (max-width: 700px) {
+        .contact .section-label {
+            color: #b7c8bd;
+        }
+
+        .contact h2 {
+            font-size: clamp(40px, 7vw, 75px);
+            line-height: 1;
+            margin-bottom: 25px;
+        }
+
+        .contact p {
+            color: #cbd5cf;
+            margin-bottom: 30px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid #84958b;
+            padding-bottom: 4px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #17211b;
+            color: #87958d;
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid #39463f;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 750px) {
+
             nav {
                 flex-direction: column;
-                gap: 10px;
+                gap: 15px;
             }
 
-            nav a {
-                margin: 5px;
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            section {
+                padding: 80px 7%;
+            }
+
+            .hero {
+                min-height: 80vh;
             }
 
             .hero h1 {
-                font-size: 42px;
+                letter-spacing: -2px;
             }
 
-            .hero h2 {
-                font-size: 24px;
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
             }
 
-            .cards {
+            .profile-placeholder {
+                min-height: 300px;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .research-grid {
                 grid-template-columns: 1fr;
             }
+
+            .project {
+                grid-template-columns: 1fr;
+                padding: 35px;
+            }
+
+            .project h3 {
+                font-size: 34px;
+            }
+
+            .experience-item {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
         }
+
     </style>
 </head>
 
+
 <body>
 
-    <nav>
-        <h2>ANUSHA</h2>
+    <!-- NAVIGATION -->
 
-        <div>
+    <nav>
+
+        <div class="logo">
+            ANUSHA
+        </div>
+
+        <div class="nav-links">
             <a href="#about">About</a>
             <a href="#research">Research</a>
             <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
             <a href="#contact">Contact</a>
         </div>
+
     </nav>
 
 
+    <!-- HERO -->
+
     <section class="hero">
 
-        <p>HELLO, I'M</p>
+        <div class="hero-content">
 
-        <h1>Anusha</h1>
-
-        <h2>Aspiring Biological Sciences Researcher</h2>
-
-        <p>
-            Exploring biotechnology, biological sciences,
-            bioinformatics and scientific research.
-        </p>
-
-        <a class="button" href="#research">
-            Explore My Work
-        </a>
-
-    </section>
-
-
-    <section id="about">
-
-        <h2>About Me</h2>
-
-        <p>
-            I am a science student with a growing interest in
-            biological sciences and biotechnology. My academic
-            journey has been shaped by scientific projects,
-            research experiences, internships and independent
-            learning.
-        </p>
-
-    </section>
-
-
-    <section id="research">
-
-        <h2>Research Interests</h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <h3>🧬 Biotechnology</h3>
-                <p>
-                    Exploring how biological knowledge can be
-                    translated into practical solutions.
-                </p>
+            <div class="hero-small">
+                BIOLOGICAL SCIENCES • BIOTECHNOLOGY • RESEARCH
             </div>
 
-            <div class="card">
-                <h3>🔬 Biological Sciences</h3>
-                <p>
-                    Interested in understanding biological
-                    systems and disease-related mechanisms.
-                </p>
-            </div>
+            <h1>
+                Anusha
+            </h1>
 
-            <div class="card">
-                <h3>💻 Bioinformatics</h3>
-                <p>
-                    Exploring the intersection of biology,
-                    data and computational tools.
-                </p>
-            </div>
+            <h2>
+                Aspiring Biological Sciences & Biotechnology Researcher
+            </h2>
 
-            <div class="card">
-                <h3>🌱 Environmental Biology</h3>
-                <p>
-                    Interested in biological approaches to
-                    environmental challenges.
-                </p>
+            <p>
+                Exploring biological systems, biotechnology and
+                medicinal biotechnology through research,
+                scientific projects and continuous learning.
+            </p>
+
+            <div class="buttons">
+
+                <a class="button button-dark" href="#projects">
+                    Explore My Work
+                </a>
+
+                <a class="button button-light" href="#contact">
+                    Get in Touch
+                </a>
+
             </div>
 
         </div>
@@ -203,22 +517,410 @@
     </section>
 
 
-    <section id="projects">
+    <!-- ABOUT -->
 
-        <h2>Research & Projects</h2>
+    <section class="about" id="about">
 
-        <div class="card">
+        <div class="section-label">
+            01 — ABOUT
+        </div>
 
-            <h3>BioResearch AI</h3>
+        <h2 class="section-title">
+            Curiosity that became a direction.
+        </h2>
+
+        <div class="about-grid">
+
+            <div class="profile-placeholder">
+                YOUR PHOTO
+            </div>
+
+            <div class="about-text">
+
+                <p>
+                    I am a science student interested in understanding
+                    biology not only as a subject, but as a field through
+                    which scientific knowledge can be transformed into
+                    meaningful solutions.
+                </p>
+
+                <p>
+                    My experiences across scientific projects,
+                    research activities, internships, publications and
+                    independent learning have gradually shaped my interest
+                    in biological sciences and biotechnology.
+                </p>
+
+                <div class="stats">
+
+                    <div class="stat">
+                        <strong>98%</strong>
+                        <span>Academic Performance</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>TOPIK 4</strong>
+                        <span>Korean Proficiency</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>2+</strong>
+                        <span>Publications</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>50+</strong>
+                        <span>Certificates</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESEARCH -->
+
+    <section class="research" id="research">
+
+        <div class="section-label">
+            02 — RESEARCH
+        </div>
+
+        <h2 class="section-title">
+            Areas I want to explore.
+        </h2>
+
+        <div class="research-grid">
+
+            <div class="research-card">
+
+                <span class="research-number">01</span>
+
+                <h3>
+                    Biotechnology
+                </h3>
+
+                <p>
+                    Exploring how biological knowledge and
+                    biotechnology can contribute to practical
+                    scientific and healthcare solutions.
+                </p>
+
+            </div>
+
+
+            <div class="research-card">
+
+                <span class="research-number">02</span>
+
+                <h3>
+                    Medicinal Biotechnology
+                </h3>
+
+                <p>
+                    Interested in biotechnology-based approaches
+                    to disease research, therapeutic development
+                    and human health.
+                </p>
+
+            </div>
+
+
+            <div class="research-card">
+
+                <span class="research-number">03</span>
+
+                <h3>
+                    Biological Sciences
+                </h3>
+
+                <p>
+                    Interested in understanding biological systems,
+                    mechanisms and the relationships between
+                    structure and function.
+                </p>
+
+            </div>
+
+
+            <div class="research-card">
+
+                <span class="research-number">04</span>
+
+                <h3>
+                    Bioinformatics
+                </h3>
+
+                <p>
+                    Exploring the intersection of biological data,
+                    computational approaches and modern research.
+                </p>
+
+            </div>
+
+
+            <div class="research-card">
+
+                <span class="research-number">05</span>
+
+                <h3>
+                    Molecular Biology
+                </h3>
+
+                <p>
+                    Interested in molecular mechanisms underlying
+                    biological processes and disease.
+                </p>
+
+            </div>
+
+
+            <div class="research-card">
+
+                <span class="research-number">06</span>
+
+                <h3>
+                    Environmental Biology
+                </h3>
+
+                <p>
+                    Exploring biological approaches to environmental
+                    challenges and sustainable solutions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section class="projects" id="projects">
+
+        <div class="section-label">
+            03 — FEATURED PROJECT
+        </div>
+
+        <h2 class="section-title">
+            Research & Projects
+        </h2>
+
+        <div class="project">
+
+            <div>
+
+                <div class="project-label">
+                    Independent Project
+                </div>
+
+                <h3>
+                    BioResearch AI
+                </h3>
+
+                <p>
+                    An independent project exploring the intersection
+                    of artificial intelligence and biological research,
+                    with a focus on making scientific information
+                    easier to explore and understand.
+                </p>
+
+                <div class="buttons">
+
+                    <a class="button button-light" href="#">
+                        View Project
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-side">
+
+                <strong>
+                    Focus
+                </strong>
+
+                <p>
+                    Artificial Intelligence × Biological Research
+                </p>
+
+                <br>
+
+                <strong>
+                    Status
+                </strong>
+
+                <p>
+                    Independent Project
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+
+    <section class="experience" id="experience">
+
+        <div class="section-label">
+            04 — EXPERIENCE
+        </div>
+
+        <h2 class="section-title">
+            Scientific experiences.
+        </h2>
+
+
+        <div class="experience-item">
+
+            <div class="experience-year">
+                2026
+            </div>
+
+            <div>
+
+                <h3>
+                    EcoServants
+                </h3>
+
+                <p>
+                    Data Analysis & Research Intern
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="experience-item">
+
+            <div class="experience-year">
+                2026
+            </div>
+
+            <div>
+
+                <h3>
+                    Biotechnology Research Experience
+                </h3>
+
+                <p>
+                    Research-oriented internship and scientific
+                    learning experience.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="experience-item">
+
+            <div class="experience-year">
+                2025–2026
+            </div>
+
+            <div>
+
+                <h3>
+                    Scientific Volunteering & Projects
+                </h3>
+
+                <p>
+                    Participation in research, citizen-science,
+                    environmental and science-related initiatives.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- PUBLICATIONS -->
+
+    <section class="publications">
+
+        <div class="section-label">
+            05 — PUBLICATIONS
+        </div>
+
+        <h2 class="section-title">
+            Scientific writing & research.
+        </h2>
+
+
+        <div class="publication">
+
+            <h3>
+                Published Research
+            </h3>
 
             <p>
-                An independent project exploring the use of
-                artificial intelligence in biological research
-                and scientific information discovery.
+                Research publication in the field of science and
+                interdisciplinary research.
             </p>
 
-            <a class="button" href="#">
-                View Project
+        </div>
+
+
+        <div class="publication">
+
+            <h3>
+                Beyond Digestion: How the Gut Microbiome Shapes Human Health
+            </h3>
+
+            <p>
+                Research article exploring the relationship between
+                the gut microbiome and human health.
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+        <div class="section-label">
+            06 — CONTACT
+        </div>
+
+        <h2>
+            Let's connect.
+        </h2>
+
+        <p>
+            For academic, research or science-related opportunities.
+        </p>
+
+        <div class="contact-links">
+
+            <a href="mailto:YOUR-EMAIL@example.com">
+                Email
+            </a>
+
+            <a href="#">
+                LinkedIn
+            </a>
+
+            <a href="#">
+                GitHub
             </a>
 
         </div>
@@ -226,26 +928,528 @@
     </section>
 
 
-    <section>
+    <!-- FOOTER -->
 
-        <h2>Experience</h2>
+    <footer>
 
-        <div class="cards">
+        © 2026 Anusha · Biological Sciences & Biotechnology
 
-            <div class="card">
-                <h3>Research & Internship Experience</h3>
-                <p>
-                    Biotechnology research, data analysis,
-                    scientific writing and related experiences.
-                </p>
+    </footer>
+
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anusha | Biological Sciences & Biotechnology</title>
+
+    <meta name="description"
+          content="Anusha's academic and research portfolio in biological sciences, biotechnology and medicinal biotechnology.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7f5;
+            color: #17211b;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid #e5e9e5;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: #17211b;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 110px 7%;
+        }
+
+        .section-label {
+            color: #567565;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            line-height: 1.15;
+            margin-bottom: 45px;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            background: #f5f7f5;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-small {
+            font-size: 15px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 10vw, 110px);
+            line-height: 0.95;
+            letter-spacing: -4px;
+            margin-bottom: 25px;
+        }
+
+        .hero h2 {
+            font-size: clamp(27px, 4vw, 48px);
+            font-weight: 400;
+            line-height: 1.15;
+            max-width: 850px;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 18px;
+            color: #536059;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.25s;
+        }
+
+        .button-dark {
+            background: #17211b;
+            color: white;
+        }
+
+        .button-light {
+            border: 1px solid #17211b;
+            color: #17211b;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .profile-placeholder {
+            min-height: 420px;
+            background: #e8eee9;
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #64736a;
+            font-size: 15px;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            color: #536059;
+            margin-bottom: 20px;
+        }
+
+        /* STATS */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .stat {
+            border-top: 1px solid #ccd5ce;
+            padding-top: 15px;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 28px;
+        }
+
+        .stat span {
+            color: #66736c;
+            font-size: 13px;
+        }
+
+        /* RESEARCH */
+
+        .research {
+            background: #f5f7f5;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .research-card {
+            background: white;
+            padding: 38px;
+            border-radius: 22px;
+            border: 1px solid #e5eae6;
+            transition: 0.3s;
+        }
+
+        .research-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .research-number {
+            color: #71877a;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .research-card h3 {
+            font-size: 25px;
+            margin: 18px 0 10px;
+        }
+
+        .research-card p {
+            color: #66736c;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            background: white;
+        }
+
+        .project {
+            background: #17211b;
+            color: white;
+            padding: 55px;
+            border-radius: 28px;
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .project-label {
+            color: #b7c8bd;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .project h3 {
+            font-size: 42px;
+            margin: 15px 0;
+        }
+
+        .project p {
+            color: #cbd5cf;
+            font-size: 17px;
+            max-width: 650px;
+        }
+
+        .project-side {
+            border: 1px solid #536158;
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .project-side p {
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        /* EXPERIENCE */
+
+        .experience {
+            background: #f5f7f5;
+        }
+
+        .experience-item {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 35px;
+            padding: 30px 0;
+            border-top: 1px solid #d6ddd8;
+        }
+
+        .experience-year {
+            color: #71877a;
+            font-weight: 600;
+        }
+
+        .experience-item h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .experience-item p {
+            color: #66736c;
+        }
+
+        /* PUBLICATIONS */
+
+        .publications {
+            background: white;
+        }
+
+        .publication {
+            padding: 30px 0;
+            border-top: 1px solid #d6ddd8;
+        }
+
+        .publication h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .publication p {
+            color: #66736c;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: #17211b;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-label {
+            color: #b7c8bd;
+        }
+
+        .contact h2 {
+            font-size: clamp(40px, 7vw, 75px);
+            line-height: 1;
+            margin-bottom: 25px;
+        }
+
+        .contact p {
+            color: #cbd5cf;
+            margin-bottom: 30px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid #84958b;
+            padding-bottom: 4px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #17211b;
+            color: #87958d;
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid #39463f;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 750px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            section {
+                padding: 80px 7%;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .profile-placeholder {
+                min-height: 300px;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project {
+                grid-template-columns: 1fr;
+                padding: 35px;
+            }
+
+            .project h3 {
+                font-size: 34px;
+            }
+
+            .experience-item {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <div class="logo">
+            ANUSHA
+        </div>
+
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-small">
+                BIOLOGICAL SCIENCES • BIOTECHNOLOGY • RESEARCH
             </div>
 
-            <div class="card">
-                <h3>Scientific Activities</h3>
-                <p>
-                    Research projects, volunteering,
-                    competitions and science-related activities.
-                </p>
+            <h1>
+                Anusha
+            </h1>
+
+            <h2>
+                Aspiring Biological Sciences & Biotechnology Researcher
+            </h2>
+
+            <p>
+                Exploring biological systems, biotechnology and
+                medicinal biotechnology through research,
+                scientific projects and continuous learning.
+            </p>
+
+            <div class="buttons">
+
+                <a class="button button-dark" href="#projects">
+                    Explore My Work
+                </a>
+
+                <a class="button button-light" href="#contact">
+                    Get in Touch
+                </a>
+
             </div>
 
         </div>
@@ -253,24 +1457,1365 @@
     </section>
 
 
-    <section id="contact">
+    <!-- ABOUT -->
 
-        <h2>Let's Connect</h2>
+    <section class="about" id="about">
 
-        <p>
-            Interested in science, research and collaboration?
-        </p>
+        <div class="section-label">
+            01 — ABOUT
+        </div>
 
-        <a class="button" href="mailto:your-email@example.com">
-            Contact Me
-        </a>
+        <h2 class="section-title">
+            Curiosity that became a direction.
+        </h2>
+
+        <div class="about-grid">
+
+            <div class="profile-placeholder">
+                YOUR PHOTO
+            </div>
+
+            <div class="about-text">
+
+                <p>
+                    I am a science student interested in understanding
+                    biology not only as a subject, but as a field through
+                    which scientific knowledge can be transformed into
+                    meaningful solutions.
+                </p>
+
+                <p>
+                    My experiences across scientific projects,
+                    research activities, internships, publications and
+                    independent learning have gradually shaped my interest
+                    in biological sciences and biotechnology.
+                </p>
+
+                <div class="stats">
+
+                    <div class="stat">
+                        <strong>98%</strong>
+                        <span>Academic Performance</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>TOPIK 4</strong>
+                        <span>Korean Proficiency</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>2+</strong>
+                        <span>Publications</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>50+</strong>
+                        <span>Certificates</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
 
     </section>
 
 
+    <!-- RESEARCH -->
+
+    <section class="research" id="research">
+
+        <div class="section-label">
+            02 — RESEARCH
+        </div>
+
+        <h2 class="section-title">
+            Areas I want to explore.
+        </h2>
+
+        <div class="research-grid">
+
+            <div class="research-card">
+
+                <span class="research-number">01</span>
+
+                <h3>
+                    Biotechnology
+                </h3>
+
+                <p>
+                    Exploring how biological knowledge and
+                    biotechnology can contribute to practical
+                    scientific and healthcare solutions.
+                </p>
+
+            </div>
+
+
+            <div class="research-card">
+
+                <span class="research-number">02</span>
+
+                <h3>
+                    Medicinal Biotechnology
+                </h3>
+
+                <p>
+                    Interested in biotechnology-based approaches
+                    to disease research, therapeutic development
+                    and human health.
+                </p>
+
+            </div>
+
+
+            <div class="research-card">
+
+                <span class="research-number">03</span>
+
+                <h3>
+                    Biological Sciences
+                </h3>
+
+                <p>
+                    Interested in understanding biological systems,
+                    mechanisms and the relationships between
+                    structure and function.
+                </p>
+
+            </div>
+
+
+            <div class="research-card">
+
+                <span class="research-number">04</span>
+
+                <h3>
+                    Bioinformatics
+                </h3>
+
+                <p>
+                    Exploring the intersection of biological data,
+                    computational approaches and modern research.
+                </p>
+
+            </div>
+
+
+            <div class="research-card">
+
+                <span class="research-number">05</span>
+
+                <h3>
+                    Molecular Biology
+                </h3>
+
+                <p>
+                    Interested in molecular mechanisms underlying
+                    biological processes and disease.
+                </p>
+
+            </div>
+
+
+            <div class="research-card">
+
+                <span class="research-number">06</span>
+
+                <h3>
+                    Environmental Biology
+                </h3>
+
+                <p>
+                    Exploring biological approaches to environmental
+                    challenges and sustainable solutions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section class="projects" id="projects">
+
+        <div class="section-label">
+            03 — FEATURED PROJECT
+        </div>
+
+        <h2 class="section-title">
+            Research & Projects
+        </h2>
+
+        <div class="project">
+
+            <div>
+
+                <div class="project-label">
+                    Independent Project
+                </div>
+
+                <h3>
+                    BioResearch AI
+                </h3>
+
+                <p>
+                    An independent project exploring the intersection
+                    of artificial intelligence and biological research,
+                    with a focus on making scientific information
+                    easier to explore and understand.
+                </p>
+
+                <div class="buttons">
+
+                    <a class="button button-light" href="#">
+                        View Project
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-side">
+
+                <strong>
+                    Focus
+                </strong>
+
+                <p>
+                    Artificial Intelligence × Biological Research
+                </p>
+
+                <br>
+
+                <strong>
+                    Status
+                </strong>
+
+                <p>
+                    Independent Project
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+
+    <section class="experience" id="experience">
+
+        <div class="section-label">
+            04 — EXPERIENCE
+        </div>
+
+        <h2 class="section-title">
+            Scientific experiences.
+        </h2>
+
+
+        <div class="experience-item">
+
+            <div class="experience-year">
+                2026
+            </div>
+
+            <div>
+
+                <h3>
+                    EcoServants
+                </h3>
+
+                <p>
+                    Data Analysis & Research Intern
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="experience-item">
+
+            <div class="experience-year">
+                2026
+            </div>
+
+            <div>
+
+                <h3>
+                    Biotechnology Research Experience
+                </h3>
+
+                <p>
+                    Research-oriented internship and scientific
+                    learning experience.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="experience-item">
+
+            <div class="experience-year">
+                2025–2026
+            </div>
+
+            <div>
+
+                <h3>
+                    Scientific Volunteering & Projects
+                </h3>
+
+                <p>
+                    Participation in research, citizen-science,
+                    environmental and science-related initiatives.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- PUBLICATIONS -->
+
+    <section class="publications">
+
+        <div class="section-label">
+            05 — PUBLICATIONS
+        </div>
+
+        <h2 class="section-title">
+            Scientific writing & research.
+        </h2>
+
+
+        <div class="publication">
+
+            <h3>
+                Published Research
+            </h3>
+
+            <p>
+                Research publication in the field of science and
+                interdisciplinary research.
+            </p>
+
+        </div>
+
+
+        <div class="publication">
+
+            <h3>
+                Beyond Digestion: How the Gut Microbiome Shapes Human Health
+            </h3>
+
+            <p>
+                Research article exploring the relationship between
+                the gut microbiome and human health.
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+        <div class="section-label">
+            06 — CONTACT
+        </div>
+
+        <h2>
+            Let's connect.
+        </h2>
+
+        <p>
+       <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anusha | Biological Sciences & Biotechnology</title>
+
+    <meta name="description"
+          content="Anusha's academic and research portfolio in biological sciences, biotechnology and medicinal biotechnology.">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7f5;
+            color: #17211b;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid #e5e9e5;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: #17211b;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 110px 7%;
+        }
+
+        .section-label {
+            color: #567565;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            line-height: 1.15;
+            margin-bottom: 45px;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            background: #f5f7f5;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-small {
+            font-size: 15px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 10vw, 110px);
+            line-height: 0.95;
+            letter-spacing: -4px;
+            margin-bottom: 25px;
+        }
+
+        .hero h2 {
+            font-size: clamp(27px, 4vw, 48px);
+            font-weight: 400;
+            line-height: 1.15;
+            max-width: 850px;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 18px;
+            color: #536059;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.25s;
+        }
+
+        .button-dark {
+            background: #17211b;
+            color: white;
+        }
+
+        .button-light {
+            border: 1px solid #17211b;
+            color: #17211b;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .profile-placeholder {
+            min-height: 420px;
+            background: #e8eee9;
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #64736a;
+            font-size: 15px;
+        }
+
+        .about-text p {
+            font-size: 18px;
+            color: #536059;
+            margin-bottom: 20px;
+        }
+
+        /* STATS */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .stat {
+            border-top: 1px solid #ccd5ce;
+            padding-top: 15px;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 28px;
+        }
+
+        .stat span {
+            color: #66736c;
+            font-size: 13px;
+        }
+
+        /* RESEARCH */
+
+        .research {
+            background: #f5f7f5;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .research-card {
+            background: white;
+            padding: 38px;
+            border-radius: 22px;
+            border: 1px solid #e5eae6;
+            transition: 0.3s;
+        }
+
+        .research-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .research-number {
+            color: #71877a;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .research-card h3 {
+            font-size: 25px;
+            margin: 18px 0 10px;
+        }
+
+        .research-card p {
+            color: #66736c;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            background: white;
+        }
+
+        .project {
+            background: #17211b;
+            color: white;
+            padding: 55px;
+            border-radius: 28px;
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .project-label {
+            color: #b7c8bd;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .project h3 {
+            font-size: 42px;
+            margin: 15px 0;
+        }
+
+        .project p {
+            color: #cbd5cf;
+            font-size: 17px;
+            max-width: 650px;
+        }
+
+        .project-side {
+            border: 1px solid #536158;
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .project-side p {
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        /* EXPERIENCE */
+
+        .experience {
+            background: #f5f7f5;
+        }
+
+        .experience-item {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 35px;
+            padding: 30px 0;
+            border-top: 1px solid #d6ddd8;
+        }
+
+        .experience-year {
+            color: #71877a;
+            font-weight: 600;
+        }
+
+        .experience-item h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .experience-item p {
+            color: #66736c;
+        }
+
+        /* PUBLICATIONS */
+
+        .publications {
+            background: white;
+        }
+
+        .publication {
+            padding: 30px 0;
+            border-top: 1px solid #d6ddd8;
+        }
+
+        .publication h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .publication p {
+            color: #66736c;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: #17211b;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-label {
+            color: #b7c8bd;
+        }
+
+        .contact h2 {
+            font-size: clamp(40px, 7vw, 75px);
+            line-height: 1;
+            margin-bottom: 25px;
+        }
+
+        .contact p {
+            color: #cbd5cf;
+            margin-bottom: 30px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid #84958b;
+            padding-bottom: 4px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #17211b;
+            color: #87958d;
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid #39463f;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 750px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            section {
+                padding: 80px 7%;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .profile-placeholder {
+                min-height: 300px;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project {
+                grid-template-columns: 1fr;
+                padding: 35px;
+            }
+
+            .project h3 {
+                font-size: 34px;
+            }
+
+            .experience-item {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <div class="logo">
+            ANUSHA
+        </div>
+
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-small">
+                BIOLOGICAL SCIENCES • BIOTECHNOLOGY • RESEARCH
+            </div>
+
+            <h1>
+                Anusha
+            </h1>
+
+            <h2>
+                Aspiring Biological Sciences & Biotechnology Researcher
+            </h2>
+
+            <p>
+                Exploring biological systems, biotechnology and
+                medicinal biotechnology through research,
+                scientific projects and continuous learning.
+            </p>
+
+            <div class="buttons">
+
+                <a class="button button-dark" href="#projects">
+                    Explore My Work
+                </a>
+
+                <a class="button button-light" href="#contact">
+                    Get in Touch
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <div class="section-label">
+            01 — ABOUT
+        </div>
+
+        <h2 class="section-title">
+            Curiosity that became a direction.
+        </h2>
+
+        <div class="about-grid">
+
+            <div class="profile-placeholder">
+                YOUR PHOTO
+            </div>
+
+            <div class="about-text">
+
+                <p>
+                    I am a science student interested in understanding
+                    biology not only as a subject, but as a field through
+                    which scientific knowledge can be transformed into
+                    meaningful solutions.
+                </p>
+
+                <p>
+                    My experiences across scientific projects,
+                    research activities, internships, publications and
+                    independent learning have gradually shaped my interest
+                    in biological sciences and biotechnology.
+                </p>
+
+                <div class="stats">
+
+                    <div class="stat">
+                        <strong>98%</strong>
+                        <span>Academic Performance</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>TOPIK 4</strong>
+                        <span>Korean Proficiency</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>2+</strong>
+                        <span>Publications</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>50+</strong>
+                        <span>Certificates</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESEARCH -->
+
+    <section class="research" id="research">
+
+        <div class="section-label">
+            02 — RESEARCH
+        </div>
+
+        <h2 class="section-title">
+            Areas I want to explore.
+        </h2>
+
+        <div class="research-grid">
+
+            <div class="research-card">
+
+                <span class="research-number">01</span>
+
+                <h3>
+                    Biotechnology
+                </h3>
+
+                <p>
+                    Exploring how biological knowledge and
+                    biotechnology can contribute to practical
+                    scientific and healthcare solutions.
+                </p>
+
+            </div>
+
+
+            <div class="research-card">
+
+                <span class="research-number">02</span>
+
+                <h3>
+                    Medicinal Biotechnology
+                </h3>
+
+                <p>
+                    Interested in biotechnology-based approaches
+                    to disease research, therapeutic development
+                    and human health.
+                </p>
+
+            </div>
+
+
+            <div class="research-card">
+
+                <span class="research-number">03</span>
+
+                <h3>
+                    Biological Sciences
+                </h3>
+
+                <p>
+                    Interested in understanding biological systems,
+                    mechanisms and the relationships between
+                    structure and function.
+                </p>
+
+            </div>
+
+
+            <div class="research-card">
+
+                <span class="research-number">04</span>
+
+                <h3>
+                    Bioinformatics
+                </h3>
+
+                <p>
+                    Exploring the intersection of biological data,
+                    computational approaches and modern research.
+                </p>
+
+            </div>
+
+
+            <div class="research-card">
+
+                <span class="research-number">05</span>
+
+                <h3>
+                    Molecular Biology
+                </h3>
+
+                <p>
+                    Interested in molecular mechanisms underlying
+                    biological processes and disease.
+                </p>
+
+            </div>
+
+
+            <div class="research-card">
+
+                <span class="research-number">06</span>
+
+                <h3>
+                    Environmental Biology
+                </h3>
+
+                <p>
+                    Exploring biological approaches to environmental
+                    challenges and sustainable solutions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section class="projects" id="projects">
+
+        <div class="section-label">
+            03 — FEATURED PROJECT
+        </div>
+
+        <h2 class="section-title">
+            Research & Projects
+        </h2>
+
+        <div class="project">
+
+            <div>
+
+                <div class="project-label">
+                    Independent Project
+                </div>
+
+                <h3>
+                    BioResearch AI
+                </h3>
+
+                <p>
+                    An independent project exploring the intersection
+                    of artificial intelligence and biological research,
+                    with a focus on making scientific information
+                    easier to explore and understand.
+                </p>
+
+                <div class="buttons">
+
+                    <a class="button button-light" href="#">
+                        View Project
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-side">
+
+                <strong>
+                    Focus
+                </strong>
+
+                <p>
+                    Artificial Intelligence × Biological Research
+                </p>
+
+                <br>
+
+                <strong>
+                    Status
+                </strong>
+
+                <p>
+                    Independent Project
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+
+    <section class="experience" id="experience">
+
+        <div class="section-label">
+            04 — EXPERIENCE
+        </div>
+
+        <h2 class="section-title">
+            Scientific experiences.
+        </h2>
+
+
+        <div class="experience-item">
+
+            <div class="experience-year">
+                2026
+            </div>
+
+            <div>
+
+                <h3>
+                    EcoServants
+                </h3>
+
+                <p>
+                    Data Analysis & Research Intern
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="experience-item">
+
+            <div class="experience-year">
+                2026
+            </div>
+
+            <div>
+
+                <h3>
+                    Biotechnology Research Experience
+                </h3>
+
+                <p>
+                    Research-oriented internship and scientific
+                    learning experience.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="experience-item">
+
+            <div class="experience-year">
+                2025–2026
+            </div>
+
+            <div>
+
+                <h3>
+                    Scientific Volunteering & Projects
+                </h3>
+
+                <p>
+                    Participation in research, citizen-science,
+                    environmental and science-related initiatives.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- PUBLICATIONS -->
+
+    <section class="publications">
+
+        <div class="section-label">
+            05 — PUBLICATIONS
+        </div>
+
+        <h2 class="section-title">
+            Scientific writing & research.
+        </h2>
+
+
+        <div class="publication">
+
+            <h3>
+                Published Research
+            </h3>
+
+            <p>
+                Research publication in the field of science and
+                interdisciplinary research.
+            </p>
+
+        </div>
+
+
+        <div class="publication">
+
+            <h3>
+                Beyond Digestion: How the Gut Microbiome Shapes Human Health
+            </h3>
+
+            <p>
+                Research article exploring the relationship between
+                the gut microbiome and human health.
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+        <div class="section-label">
+            06 — CONTACT
+        </div>
+
+        <h2>
+            Let's connect.
+        </h2>
+
+        <p>
+            For academic, research or science-related opportunities.
+        </p>
+
+        <div class="contact-links">
+
+            <a href="mailto:YOUR-EMAIL@example.com">
+                Email
+            </a>
+
+            <a href="#">
+                LinkedIn
+            </a>
+
+            <a href="#">
+                GitHub
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
     <footer>
-        © 2026 Anusha — Research Portfolio
+
+        © 2026 Anusha · Biological Sciences & Biotechnology
+
     </footer>
+
+
+</body>
+</html>     For academic, research or science-related opportunities.
+        </p>
+
+        <div class="contact-links">
+
+            <a href="mailto:YOUR-EMAIL@example.com">
+                Email
+            </a>
+
+            <a href="#">
+                LinkedIn
+            </a>
+
+            <a href="#">
+                GitHub
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 Anusha · Biological Sciences & Biotechnology
+
+    </footer>
+
 
 </body>
 </html>
