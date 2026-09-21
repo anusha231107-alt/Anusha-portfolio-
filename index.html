@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anusha | Biological Sciences Researcher</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f7faf8;
+            color: #17211b;
+            line-height: 1.6;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: white;
+            position: sticky;
+            top: 0;
+        }
+
+        nav h2 {
+            margin: 0;
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #17211b;
+        }
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+            font-weight: normal;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 22px;
+            background: #17211b;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            width: fit-content;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        footer {
+            padding: 30px 8%;
+            background: #17211b;
+            color: white;
+            text-align: center;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav a {
+                margin: 5px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero h2 {
+                font-size: 24px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>ANUSHA</h2>
+
+        <div>
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+
+    <section class="hero">
+
+        <p>HELLO, I'M</p>
+
+        <h1>Anusha</h1>
+
+        <h2>Aspiring Biological Sciences Researcher</h2>
+
+        <p>
+            Exploring biotechnology, biological sciences,
+            bioinformatics and scientific research.
+        </p>
+
+        <a class="button" href="#research">
+            Explore My Work
+        </a>
+
+    </section>
+
+
+    <section id="about">
+
+        <h2>About Me</h2>
+
+        <p>
+            I am a science student with a growing interest in
+            biological sciences and biotechnology. My academic
+            journey has been shaped by scientific projects,
+            research experiences, internships and independent
+            learning.
+        </p>
+
+    </section>
+
+
+    <section id="research">
+
+        <h2>Research Interests</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>🧬 Biotechnology</h3>
+                <p>
+                    Exploring how biological knowledge can be
+                    translated into practical solutions.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🔬 Biological Sciences</h3>
+                <p>
+                    Interested in understanding biological
+                    systems and disease-related mechanisms.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>💻 Bioinformatics</h3>
+                <p>
+                    Exploring the intersection of biology,
+                    data and computational tools.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🌱 Environmental Biology</h3>
+                <p>
+                    Interested in biological approaches to
+                    environmental challenges.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="projects">
+
+        <h2>Research & Projects</h2>
+
+        <div class="card">
+
+            <h3>BioResearch AI</h3>
+
+            <p>
+                An independent project exploring the use of
+                artificial intelligence in biological research
+                and scientific information discovery.
+            </p>
+
+            <a class="button" href="#">
+                View Project
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <section>
+
+        <h2>Experience</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Research & Internship Experience</h3>
+                <p>
+                    Biotechnology research, data analysis,
+                    scientific writing and related experiences.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Scientific Activities</h3>
+                <p>
+                    Research projects, volunteering,
+                    competitions and science-related activities.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="contact">
+
+        <h2>Let's Connect</h2>
+
+        <p>
+            Interested in science, research and collaboration?
+        </p>
+
+        <a class="button" href="mailto:your-email@example.com">
+            Contact Me
+        </a>
+
+    </section>
+
+
+    <footer>
+        © 2026 Anusha — Research Portfolio
+    </footer>
+
+</body>
+</html>
